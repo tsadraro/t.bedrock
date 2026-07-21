@@ -25,6 +25,7 @@ import AuditLog from '@/pages/AuditLog';
 import IncidentLog from '@/pages/IncidentLog';
 import DataRights from '@/pages/DataRights';
 import SystemConfig from '@/pages/SystemConfig';
+import Users from '@/pages/Users';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -71,6 +72,7 @@ const AuthenticatedApp = () => {
           <Route path="/audit-log" element={<AuditLog />} />
           <Route path="/incident-log" element={<IncidentLog />} />
           <Route path="/system-config" element={<SystemConfig />} />
+          <Route path="/users" element={<Users />} />
         </Route>
       </Route>
       <Route path="*" element={<PageNotFound />} />
