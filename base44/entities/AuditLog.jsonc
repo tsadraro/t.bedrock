@@ -1,0 +1,70 @@
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "escrow_hold_created",
+        "escrow_released",
+        "escrow_forfeited",
+        "escrow_disputed",
+        "lease_created",
+        "lease_signed_tenant",
+        "lease_signed_landlord",
+        "lease_activated",
+        "lease_terminated",
+        "dispute_opened",
+        "dispute_resolved",
+        "dispute_evidence_requested",
+        "data_rights_request",
+        "consent_granted",
+        "consent_revoked",
+        "property_listed",
+        "application_submitted",
+        "screening_report_viewed",
+        "admin_action",
+        "system_config_changed"
+      ]
+    },
+    "actor_id": {
+      "type": "string"
+    },
+    "actor_name": {
+      "type": "string"
+    },
+    "actor_role": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string",
+      "default": "ETB"
+    },
+    "forfeiture_clause_id": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "string"
+    },
+    "ip_address": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "action_type",
+    "actor_id",
+    "actor_role"
+  ]
+}

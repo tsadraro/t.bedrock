@@ -1,0 +1,110 @@
+{
+  "name": "TenantProfile",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "national_id_type": {
+      "type": "string",
+      "enum": [
+        "fayda",
+        "passport",
+        "kebele_id",
+        "drivers_license"
+      ],
+      "default": "fayda"
+    },
+    "fayda_id": {
+      "type": "string"
+    },
+    "fayda_verification_status": {
+      "type": "string",
+      "enum": [
+        "not_submitted",
+        "pending",
+        "verified",
+        "rejected"
+      ],
+      "default": "not_submitted"
+    },
+    "fayda_verification_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "male",
+        "female",
+        "prefer_not_to_say"
+      ]
+    },
+    "occupation": {
+      "type": "string"
+    },
+    "employer": {
+      "type": "string"
+    },
+    "monthly_income": {
+      "type": "number"
+    },
+    "emergency_contact_name": {
+      "type": "string"
+    },
+    "emergency_contact_phone": {
+      "type": "string"
+    },
+    "profile_photo": {
+      "type": "string"
+    },
+    "consent_identity_financial": {
+      "type": "boolean",
+      "default": false
+    },
+    "consent_identity_financial_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "consent_identity_financial_version": {
+      "type": "string"
+    },
+    "consent_rental_history_portability": {
+      "type": "boolean",
+      "default": false
+    },
+    "consent_rental_history_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "consent_rental_history_version": {
+      "type": "string"
+    },
+    "data_processing_restricted": {
+      "type": "boolean",
+      "default": false
+    },
+    "deletion_requested": {
+      "type": "boolean",
+      "default": false
+    },
+    "deletion_requested_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "user_id",
+    "full_name"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "name": "Property",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "subcity": {
+      "type": "string"
+    },
+    "woreda": {
+      "type": "string"
+    },
+    "rent_amount": {
+      "type": "number"
+    },
+    "deposit_amount": {
+      "type": "number"
+    },
+    "advance_months_requested": {
+      "type": "number"
+    },
+    "minimum_lease_months": {
+      "type": "number"
+    },
+    "lease_term_exception_flagged": {
+      "type": "boolean",
+      "default": false
+    },
+    "lease_term_exception_reason": {
+      "type": "string"
+    },
+    "bedrooms": {
+      "type": "number"
+    },
+    "bathrooms": {
+      "type": "number"
+    },
+    "size_sqm": {
+      "type": "number"
+    },
+    "photos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "amenities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "rented",
+        "inactive"
+      ],
+      "default": "draft"
+    },
+    "landlord_id": {
+      "type": "string"
+    },
+    "landlord_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "address",
+    "rent_amount",
+    "deposit_amount",
+    "minimum_lease_months",
+    "landlord_id"
+  ]
+}

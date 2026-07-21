@@ -1,0 +1,63 @@
+{
+  "name": "DataRightsRequest",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "user_name": {
+      "type": "string"
+    },
+    "request_type": {
+      "type": "string",
+      "enum": [
+        "access_export",
+        "correct_data",
+        "delete_account",
+        "restrict_processing",
+        "object_automated_processing",
+        "human_review_screening"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "in_progress",
+        "completed",
+        "denied",
+        "partially_fulfilled"
+      ],
+      "default": "pending"
+    },
+    "description": {
+      "type": "string"
+    },
+    "correction_field": {
+      "type": "string"
+    },
+    "correction_requested_value": {
+      "type": "string"
+    },
+    "admin_notes": {
+      "type": "string"
+    },
+    "fulfilled_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "denial_reason": {
+      "type": "string"
+    },
+    "export_url": {
+      "type": "string"
+    },
+    "screening_report_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id",
+    "request_type"
+  ]
+}

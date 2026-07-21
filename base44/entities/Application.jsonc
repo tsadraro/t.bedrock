@@ -1,0 +1,63 @@
+{
+  "name": "Application",
+  "type": "object",
+  "properties": {
+    "property_id": {
+      "type": "string"
+    },
+    "property_address": {
+      "type": "string"
+    },
+    "landlord_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "tenant_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "screening_requested",
+        "screening_complete",
+        "approved",
+        "rejected",
+        "lease_created",
+        "withdrawn"
+      ],
+      "default": "pending"
+    },
+    "screening_consent_granted": {
+      "type": "boolean",
+      "default": false
+    },
+    "screening_consent_granted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "screening_consent_version": {
+      "type": "string"
+    },
+    "landlord_decision_notes": {
+      "type": "string"
+    },
+    "decided_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lease_id": {
+      "type": "string"
+    },
+    "applicant_message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "property_id",
+    "landlord_id",
+    "tenant_id"
+  ]
+}

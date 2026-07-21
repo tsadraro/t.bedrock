@@ -1,0 +1,49 @@
+{
+  "name": "ConsentLog",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "consent_type": {
+      "type": "string",
+      "enum": [
+        "identity_financial_data",
+        "screening_data_share",
+        "rental_history_portability",
+        "automated_processing_objection"
+      ]
+    },
+    "consent_granted": {
+      "type": "boolean"
+    },
+    "consent_text_version": {
+      "type": "string"
+    },
+    "consent_text_snapshot": {
+      "type": "string"
+    },
+    "landlord_id": {
+      "type": "string"
+    },
+    "application_id": {
+      "type": "string"
+    },
+    "ip_address": {
+      "type": "string"
+    },
+    "revoked_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "revocation_reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_id",
+    "consent_type",
+    "consent_granted",
+    "consent_text_version"
+  ]
+}

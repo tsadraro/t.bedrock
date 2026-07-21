@@ -1,0 +1,95 @@
+{
+  "name": "RentalHistory",
+  "type": "object",
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "lease_id": {
+      "type": "string"
+    },
+    "property_id": {
+      "type": "string"
+    },
+    "property_address": {
+      "type": "string"
+    },
+    "landlord_id": {
+      "type": "string"
+    },
+    "landlord_name": {
+      "type": "string"
+    },
+    "tenancy_start": {
+      "type": "string",
+      "format": "date"
+    },
+    "tenancy_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "rent_amount": {
+      "type": "number"
+    },
+    "payment_punctuality_score": {
+      "type": "string",
+      "enum": [
+        "excellent",
+        "good",
+        "fair",
+        "poor"
+      ]
+    },
+    "late_payments_count": {
+      "type": "number",
+      "default": 0
+    },
+    "disputes_count": {
+      "type": "number",
+      "default": 0
+    },
+    "damage_claims_count": {
+      "type": "number",
+      "default": 0
+    },
+    "deposit_forfeited": {
+      "type": "boolean",
+      "default": false
+    },
+    "deposit_forfeiture_amount": {
+      "type": "number"
+    },
+    "deposit_forfeiture_reason": {
+      "type": "string"
+    },
+    "early_termination": {
+      "type": "boolean",
+      "default": false
+    },
+    "landlord_reference_rating": {
+      "type": "string",
+      "enum": [
+        "highly_recommended",
+        "recommended",
+        "neutral",
+        "not_recommended"
+      ]
+    },
+    "landlord_reference_notes": {
+      "type": "string"
+    },
+    "landlord_reference_submitted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "tenant_id",
+    "lease_id",
+    "property_address",
+    "tenancy_start"
+  ]
+}

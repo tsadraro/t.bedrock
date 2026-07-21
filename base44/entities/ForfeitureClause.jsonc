@@ -1,0 +1,68 @@
+{
+  "name": "ForfeitureClause",
+  "type": "object",
+  "properties": {
+    "lease_id": {
+      "type": "string"
+    },
+    "clause_code": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "property_damage",
+        "unpaid_rent",
+        "early_termination",
+        "unauthorized_subletting",
+        "other"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "forfeiture_type": {
+      "type": "string",
+      "enum": [
+        "full",
+        "partial",
+        "percentage"
+      ]
+    },
+    "forfeiture_percentage": {
+      "type": "number"
+    },
+    "forfeiture_fixed_amount": {
+      "type": "number"
+    },
+    "tenant_agreed": {
+      "type": "boolean",
+      "default": false
+    },
+    "tenant_agreed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "landlord_agreed": {
+      "type": "boolean",
+      "default": false
+    },
+    "landlord_agreed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "order_index": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "lease_id",
+    "category",
+    "title",
+    "description",
+    "forfeiture_type"
+  ]
+}

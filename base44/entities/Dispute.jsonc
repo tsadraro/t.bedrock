@@ -1,0 +1,90 @@
+{
+  "name": "Dispute",
+  "type": "object",
+  "properties": {
+    "lease_id": {
+      "type": "string"
+    },
+    "property_address": {
+      "type": "string"
+    },
+    "raised_by_id": {
+      "type": "string"
+    },
+    "raised_by_name": {
+      "type": "string"
+    },
+    "raised_by_role": {
+      "type": "string",
+      "enum": [
+        "tenant",
+        "landlord"
+      ]
+    },
+    "against_id": {
+      "type": "string"
+    },
+    "against_name": {
+      "type": "string"
+    },
+    "dispute_type": {
+      "type": "string",
+      "enum": [
+        "deposit_release",
+        "deposit_forfeiture",
+        "forfeiture_clause",
+        "rent_increase",
+        "lease_termination",
+        "other"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "evidence_requested",
+        "under_review",
+        "resolved_tenant_favor",
+        "resolved_landlord_favor",
+        "resolved_split",
+        "withdrawn"
+      ],
+      "default": "open"
+    },
+    "admin_assigned_id": {
+      "type": "string"
+    },
+    "evidence_request_note": {
+      "type": "string"
+    },
+    "evidence_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resolution_notes": {
+      "type": "string"
+    },
+    "resolved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "deposit_amount_contested": {
+      "type": "number"
+    },
+    "forfeiture_clause_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "lease_id",
+    "raised_by_id",
+    "raised_by_role",
+    "dispute_type",
+    "description"
+  ]
+}

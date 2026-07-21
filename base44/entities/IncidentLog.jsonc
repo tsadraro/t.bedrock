@@ -1,0 +1,73 @@
+{
+  "name": "IncidentLog",
+  "type": "object",
+  "properties": {
+    "detection_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "description": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "affected_user_ids": {
+      "type": "string"
+    },
+    "affected_user_count": {
+      "type": "number"
+    },
+    "data_types_affected": {
+      "type": "string"
+    },
+    "notification_status": {
+      "type": "string",
+      "enum": [
+        "not_required",
+        "pending",
+        "notified_users",
+        "notified_authority",
+        "fully_notified"
+      ],
+      "default": "pending"
+    },
+    "authority_notified_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "authority_ref_number": {
+      "type": "string"
+    },
+    "hours_since_detection": {
+      "type": "number"
+    },
+    "within_72h_window": {
+      "type": "boolean"
+    },
+    "remediation_steps": {
+      "type": "string"
+    },
+    "resolved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reported_by_id": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "detection_time",
+    "description",
+    "severity"
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "name": "Lease",
+  "type": "object",
+  "properties": {
+    "property_id": {
+      "type": "string"
+    },
+    "property_address": {
+      "type": "string"
+    },
+    "landlord_id": {
+      "type": "string"
+    },
+    "landlord_name": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "tenant_name": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "lease_term_months": {
+      "type": "number"
+    },
+    "rent_amount": {
+      "type": "number"
+    },
+    "deposit_amount": {
+      "type": "number"
+    },
+    "advance_months": {
+      "type": "number"
+    },
+    "payment_schedule": {
+      "type": "string",
+      "enum": [
+        "monthly",
+        "quarterly",
+        "biannual",
+        "annual"
+      ],
+      "default": "monthly"
+    },
+    "annual_increase_cap_percent": {
+      "type": "number"
+    },
+    "proposed_annual_increase_percent": {
+      "type": "number"
+    },
+    "addis_housing_registration_ref": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "pending_tenant_signature",
+        "pending_landlord_signature",
+        "pending_registration",
+        "active",
+        "expired",
+        "terminated",
+        "disputed"
+      ],
+      "default": "draft"
+    },
+    "tenant_signed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "landlord_signed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "termination_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "termination_reason": {
+      "type": "string"
+    },
+    "escrow_hold_id": {
+      "type": "string"
+    },
+    "escrow_status": {
+      "type": "string",
+      "enum": [
+        "none",
+        "hold_pending",
+        "held",
+        "released",
+        "forfeited",
+        "disputed"
+      ],
+      "default": "none"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "property_id",
+    "landlord_id",
+    "tenant_id",
+    "start_date",
+    "end_date",
+    "rent_amount",
+    "deposit_amount"
+  ]
+}
